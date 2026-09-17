@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import Input from './Input';
 
 const HomePage: React.FC = () => {
   const [message, setMessage] = useState('');
+  const [defaultInput, setDefaultInput] = useState('');
+  const [outlineInput, setOutlineInput] = useState('');
 
   const handlePrimaryClick = () => {
     setMessage('Primary button clicked!');
@@ -37,6 +40,35 @@ const HomePage: React.FC = () => {
             <Button variant="primary" disabled>
               Disabled Button
             </Button>
+          </div>
+
+          <div className="border-t pt-6 mt-6">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">Input Variants</h2>
+
+            <div className="space-y-4">
+              <Input
+                variant="default"
+                label="Default Input"
+                placeholder="Enter text..."
+                value={defaultInput}
+                onChange={(e) => setDefaultInput(e.target.value)}
+              />
+
+              <Input
+                variant="outline"
+                label="Outline Input"
+                placeholder="Enter text..."
+                value={outlineInput}
+                onChange={(e) => setOutlineInput(e.target.value)}
+              />
+
+              <Input
+                variant="default"
+                label="Disabled Input"
+                placeholder="This is disabled..."
+                disabled
+              />
+            </div>
           </div>
 
           {message && (
