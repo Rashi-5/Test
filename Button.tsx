@@ -15,11 +15,11 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   className = '',
 }) => {
-  const baseStyles = 'px-4 py-2 rounded-lg font-medium transition-colors duration-200 cursor-pointer';
+  const baseStyles = 'px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg';
 
   const variantStyles = {
-    primary: 'bg-blue-600 text-white hover:bg-blue-700 disabled:bg-blue-400',
-    secondary: 'bg-gray-300 text-gray-800 hover:bg-gray-400 disabled:bg-gray-200',
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 active:scale-95 disabled:bg-blue-400',
+    secondary: 'bg-gray-300 text-gray-800 hover:bg-gray-400 active:scale-95 disabled:bg-gray-200',
   };
 
   const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : '';
